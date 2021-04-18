@@ -1,0 +1,7 @@
+dotnet new mvc
+
+dotnet add package Microsoft.EntityFrameworkCore
+
+dotnet add package Microsoft.EntityFrameworkCore.Tools
+
+dotnet add package Npgsql.EntityFrameworkCore.PostgreSQL
