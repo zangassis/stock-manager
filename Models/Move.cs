@@ -12,6 +12,6 @@ namespace stock_manager.Models
 
         public string Description { get; set; }
 
-        public DateTime ModeDate { get; set; }
+        public DateTime MoveDate { get; set; }
     }
 }

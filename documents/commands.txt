@@ -5,3 +5,7 @@ dotnet add package Microsoft.EntityFrameworkCore
 dotnet add package Microsoft.EntityFrameworkCore.Tools
 
 dotnet add package Npgsql.EntityFrameworkCore.PostgreSQL
+
+dotnet ef migrations add creationgDB
+
+dotnet ef database update
