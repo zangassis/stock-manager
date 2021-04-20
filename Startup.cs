@@ -25,7 +25,9 @@ namespace stock_manager
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // This method get the configuration of the database
             services.AddDbContext<Context>(options => options.UseNpgsql(Configuration.GetConnectionString("ConnectionDB")));
+            
             services.AddControllersWithViews();
         }
 

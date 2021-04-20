@@ -1,0 +1,54 @@
+@model IEnumerable<Category>
+
+  @{
+    ViewData["Title"] = "Categories registered";
+  }
+
+  <div class="container p-5">
+    <div class="border border-light rounded p-5">
+      <a asp-controller="Categories" asp-action="NewCategory" class="btn btn-sm btm-outline-info">
+        New Category
+      </a>
+      <hr />
+      <table class="table table-striped table-hover table-sm">
+        <thead>
+          <tr class="thead-dark">
+          <th>
+            (@Html.DisplayNameFor(model => model.Name))
+          </th>
+          <th>
+            Actions
+          </th>
+          </tr>
+        </thead>
+
+        <tbody>
+          @foreach (var item in Model)
+          {
+            <tr>
+              <td>
+                @Html.DisplayFor(modelItem => item.Name)
+              </td>
+              <td>
+                <div class="row"> 
+                  <a asp-controller="Categories" 
+                  asp-action="UpdateCategory" 
+                  asp-route-Id="@item.Id" 
+                  class="btn btn-sm btn-outline-primary rounded-circle">
+                 <i class="fa fa-pencil-square-o"></i>
+                  </a>&nbsp;&nbsp;|	&nbsp;&nbsp;
+                <form asp-controller="Categories" 
+                  asp-action="DeleteCategory" 
+                  asp-route-Id="@item.Id">
+                  <button type="submit" class="btn btn-sm btn-outline-danger rounded-circle">
+                    <i class="fa fa-times-circle"></i>
+                  </button>
+                </form>
+                </div>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
