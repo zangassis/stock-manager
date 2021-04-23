@@ -1,20 +1,20 @@
 @model IEnumerable<Category>
 
-  @{
-    ViewData["Title"] = "Categories registered";
-  }
+@{
+  ViewData["Title"] = "Categories registered";
+}
 
-  <div class="container p-5">
+<div class="container p-5">
     <div class="border border-light rounded p-5">
-      <a asp-controller="Categories" asp-action="NewCategory" class="btn btn-sm btm-outline-info">
-        New Category
-      </a>
+        <a asp-controller="Categories" asp-action="NewCategory" class="btn btn-sm btn-outline-info">
+            New Category
+        </a>
       <hr />
       <table class="table table-striped table-hover table-sm">
         <thead>
           <tr class="thead-dark">
           <th>
-            (@Html.DisplayNameFor(model => model.Name))
+            @Html.DisplayNameFor(model => model.Name)
           </th>
           <th>
             Actions
@@ -33,13 +33,13 @@
                 <div class="row"> 
                   <a asp-controller="Categories" 
                   asp-action="UpdateCategory" 
-                  asp-route-Id="@item.Id" 
+                  asp-route-Id="@item.CategoryId" 
                   class="btn btn-sm btn-outline-primary rounded-circle">
                  <i class="fa fa-pencil-square-o"></i>
                   </a>&nbsp;&nbsp;|	&nbsp;&nbsp;
                 <form asp-controller="Categories" 
                   asp-action="DeleteCategory" 
-                  asp-route-Id="@item.Id">
+                  asp-route-Id="@item.CategoryId">
                   <button type="submit" class="btn btn-sm btn-outline-danger rounded-circle">
                     <i class="fa fa-times-circle"></i>
                   </button>

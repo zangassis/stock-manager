@@ -8,7 +8,7 @@ namespace stock_manager.Mapping
     {
         public void Configure(EntityTypeBuilder<Category> builder)
         {
-            builder.HasKey(x => x.Id);
+            builder.HasKey(x => x.CategoryId);
             builder.Property(x => x.Name).HasMaxLength(30).IsRequired();
             builder.HasMany(x => x.Products).WithOne(x => x.Category);
             builder.ToTable("Categories");

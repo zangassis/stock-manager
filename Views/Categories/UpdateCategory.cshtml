@@ -10,7 +10,7 @@
         <hr />
         <form asp-action="UpdateCategory">
 
-          <input hidden asp-for="Id" />
+          <input hidden asp-for="CategoryId" />
           <div class="form-group">
             <label>Name</label>
             <input asp-for="Name" type="text" class="form-control form-control-sm" />
@@ -22,6 +22,7 @@
                     Save
                   </button>
                 </div>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <div class="p1-1">
                   <a class="btn btn-sm bt-light" asp-action="Index">Back</a>
                 </div>
