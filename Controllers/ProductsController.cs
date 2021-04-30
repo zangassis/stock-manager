@@ -40,5 +40,40 @@ namespace stock_manager.Controllers
             ViewData["CategoryId"] = new SelectList(await _context.Categories.ToListAsync(), "CategoryId", "Name", product.CategoryId);
             return View(product);
         }
+
+        [HttpGet]
+        public async Task<IActionResult> UpdateProduct(int id)
+        {
+            Product product = await _context.Products.FindAsync(id);
+
+            ViewData["CategoryId"] = new SelectList(await _context.Categories.ToListAsync(), "CategoryId", "Name");
+            return View(product);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> UpdateProduct(Product product)
+        {
+            if(ModelState.IsValid)
+            {
+                _context.Products.Update(product);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            
+            ViewData["CategoryId"] = new SelectList(await _context.Categories.ToListAsync(), "CategoryId", "Name");
+            return View(product);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteProduct(int id)
+        {
+          Product product = await _context.Products.FindAsync(id);
+
+          _context.Products.Remove(product);
+
+          await _context.SaveChangesAsync();
+
+          return RedirectToAction(nameof(Index));
+        }
     }
 }              

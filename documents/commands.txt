@@ -8,4 +8,6 @@ dotnet add package Npgsql.EntityFrameworkCore.PostgreSQL
 
 dotnet ef migrations add creationgDB
 
+dotnet tool update --global dotnet-ef
+
 dotnet ef database update
