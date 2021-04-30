@@ -40,6 +40,14 @@ namespace stock_manager.Controllers
             ViewData["CategoryId"] = new SelectList(await _context.Categories.ToListAsync(), "CategoryId", "Name", product.CategoryId);
             return View(product);
         }
+		
+		[HttpGet]
+        public async Task<IActionResult> ProductDetails(int id)
+        {
+            Product product = await _context.Products.Include(x => x.Category).FirstOrDefaultAsync(x => x.Id == id);
+            return View(product);
+        }
+
 
         [HttpGet]
         public async Task<IActionResult> UpdateProduct(int id)
