@@ -9,8 +9,9 @@
         <div class="col-10 border border-light rounded p-5">
             <h5 class="text-primary"><strong>Product Details and Moves  @Model.Name</strong></h5>
             <hr/>
+            <h6>Name - @Model.Name</h6>
             <h6>Quantity - @Model.Quantity</h6>
-            <h6>Preço - @Model.Price</h6>
+            <h6>Price - @Model.Price</h6>
             <h6>Category - @Model.Category.Name</h6>
             <hr/>
 
@@ -27,7 +28,6 @@
                     </div>
                 </div>
                 <hr/>
-               @await Component.InvokeAsync("Moves", @Model.Id)
             </div>
         </div>
     </div>
