@@ -1,0 +1,41 @@
+@model Move
+
+@{
+    ViewData["Title"] = "Update Move";
+}
+
+<div class="container p-5">
+    <div class="row">
+        <div class="col-6 border border-light rounded p-5 shadow">
+            <h6>Update Move @Model.Description</h6>
+            <hr />
+
+            <form asp-action="UpdateMove">
+                <div class="form-group">
+                    <label>Description</label>
+                    <input asp-for="Description" type="text" class="form-control form-control-sm" />
+                </div>
+
+                <input hidden asp-for="Id" />
+                <input hidden asp-for="ProductId"/>
+                <input hidden asp-for="MoveDate"/>
+
+                <div class="container">
+                    <div class="row">
+                        <div>
+                            <button type="submit" class="btn btn-sm btn-outline-primary">
+                                Save
+                            </button>
+                        </div>
+
+                        <div class="pl-1">
+                            <a class="btn btn-sm btn-light" asp-action="ProductDetails" asp-controller="Products" asp-route-Id="@Model.ProductId">Back</a>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+</div>

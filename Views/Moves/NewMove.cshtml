@@ -1,0 +1,39 @@
+@model Move
+
+@{
+    ViewData["Title"] = "New Move";
+}
+
+<div class="container p-5">
+    <div class="row">
+        <div class="col-6 border border-light rounded p-5 shadow">
+            <h6>New Move</h6>
+            <hr />
+
+            <form asp-action="NewMove">
+                <div class="form-group">
+                    <label>Description</label>
+                    <input asp-for="Description" type="text" class="form-control form-control-sm" />
+                </div>
+
+                <input asp-for="ProductId" />
+
+                <div class="container">
+                    <div class="row">
+                        <div>
+                            <button type="submit" class="btn btn-sm btn-outline-success">
+                                Save
+                            </button>
+                        </div>
+
+                        <div class="pl-1">
+                            <a class="btn btn-sm btn-light" asp-action="ProductDetails" asp-controller="Products" asp-route-Id="@Model.ProductId">Back</a>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+</div>
