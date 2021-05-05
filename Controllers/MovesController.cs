@@ -1,8 +1,6 @@
 using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
 using stock_manager.Models;
 
 namespace stock_manager.Controllers
@@ -17,10 +15,10 @@ namespace stock_manager.Controllers
         }
 
         [HttpGet]
-        public IActionResult NewMove(int productId)
+        public async Task<IActionResult> NewMove(int id)
         {
             Move move = new Move 
-            { Id = productId };
+            { ProductId = id };
             return View(move);
         }
 

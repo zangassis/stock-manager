@@ -9,7 +9,6 @@
         <div class="col-10 border border-light rounded p-5">
             <h5 class="text-primary"><strong>Product Details and Moves  @Model.Name</strong></h5>
             <hr />
-            <h6>Id - @Model.Id</h6>
             <h6>Name - @Model.Name</h6>
             <h6>Quantity - @Model.Quantity</h6>
             <h6>Price - @Model.Price</h6>
@@ -23,7 +22,7 @@
                     </div>
 
                     <div class="col-4">
-                        <a asp-action="NewMove" asp-controller="Moves" asp-route-produtctId="@Model.Id" class="btn btn-sm btn-outline-success">
+                        <a asp-action="NewMove" asp-controller="Moves" asp-route-id="@Model.Id" class="btn btn-sm btn-outline-success">
                             New Move
                         </a>
                     </div>
